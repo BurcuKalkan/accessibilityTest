@@ -3,19 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Türkçe Alt Text Testi</title>
+  <title>Türkçe Alt Text Testi - Hata Testi</title>
 </head>
 <body>
-  <h1>Alt Text Türkçe Karakter Testi</h1>
+  <h1>Alt Text Türkçe Karakter Hata Testi</h1>
 
-  <p>Aşağıdaki resimlerin alt metinleri Türkçe karakterler içerir:</p>
+  <p>Aşağıdaki resimlerin alt metinlerinde bazı hata örnekleri bulunacaktır:</p>
 
-  <img src="https://via.placeholder.com/150" alt="Deprem öncesi şaşırtan olay 5 dakikadan fazla sürdü" title="Deprem öncesi şaşırtan olay 5 dakikadan fazla sürdü" >
-  <img src="https://via.placeholder.com/150" alt="şekerli çörek ve öğle yemeği">
+  <!-- Eksik alt metin -->
+  <img src="https://via.placeholder.com/150">
+
+  <!-- Boş alt metin -->
+  <img src="https://via.placeholder.com/150" alt="">
+
+  <!-- Türkçe karakter bozulmuş (encoding hatası) -->
   <img src="https://via.placeholder.com/150" alt="İstanbul’daki öğle güneşi">
-  <img src="https://via.placeholder.com/150" alt="ğ harfiyle başlayan img açıklaması">
+
+  <!-- Eksik alt metin ve Türkçe karakter -->
+  <img src="https://via.placeholder.com/150" alt="">
+
+  <!-- Türkçe karakterler içeriyor ama alt metin yok -->
+  <img src="https://via.placeholder.com/150" alt="şekerli çörek ve öğle yemeği">
+
+  <!-- Görsel kaynağı eksik ya da yüklenemeyen img (JS ile yüklenen bir içerik gibi) -->
+  <img src="https://via.placeholder.com/150" alt="Deprem öncesi şaşırtan olay 5 dakikadan fazla sürdü" title="Deprem öncesi şaşırtan olay 5 dakikadan fazla sürdü" class="layout1-fullbox__cover--img entered loading" width="424" height="282" data-ll-status="loading">
+  
+  <!-- Türkçe karakter içeriyor fakat kodlama hatası olabilecek bir örnek -->
   <img src="https://via.placeholder.com/150" alt="Türkçe karakterler: ç, ğ, ö, ü, ş, İ">
-  <img data-src="https://image.hurimg.com/i/hurriyet/75/424x282/680f64467f24b016864e5d64.jpg" alt="Deprem öncesi şaşırtan olay 5 dakikadan fazla sürdü" title="Deprem öncesi şaşırtan olay 5 dakikadan fazla sürdü" class="layout1-fullbox__cover--img entered loading" width="424" height="282" data-ll-status="loading" src="https://image.hurimg.com/i/hurriyet/75/424x282/680f64467f24b016864e5d64.jpg">
-  <img class="sidebar__logo--img" alt="Hürriyet - Haber, Son Dakika Haberler, Güncel Gazete Haberleri" title="Hürriyet - Haber, Son Dakika Haberler, Güncel Gazete Haberleri" data-src="https://static.hurriyet.com.tr/static/images/redesign/hurriyet-logo-red.svg?v=azure-45801" data-hero="" height="33" width="120">
+
+  <!-- İkinci görsel, Türkçe karakterle bir açıklama -->
+  <img src="https://via.placeholder.com/150" alt="ğ harfiyle başlayan img açıklaması">
+
+  <!-- Hürriyet logosu gibi görsel, alt metni eksik ya da bozuk olabilir -->
+  <img class="sidebar__logo--img" alt="" title="Hürriyet - Haber, Son Dakika Haberler, Güncel Gazete Haberleri" data-src="https://static.hurriyet.com.tr/static/images/redesign/hurriyet-logo-red.svg?v=azure-45801" height="33" width="120">
 </body>
 </html>
+
