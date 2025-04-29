@@ -2,14 +2,12 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Alt Text Var Ama Hata Veriyor</title>
+  <title>WAVE Hata Üretme Testi</title>
 </head>
 <body>
-  <h1>Test: Alt Text var ama WAVE hata veriyor</h1>
+  <h1>Alt Text Var Ama WAVE Hata Veriyor</h1>
 
-  <!-- Görsel, src yerine data-src kullanırsa, WAVE bunu yok sayar -->
-  <!-- Bu yüzden alt olsa da hata verir -->
-  <a href="https://twitter.com/ornek" title="Twitter" class="img-link">
+  <a href="https://twitter.com/ornek" class="img-link" title="Twitter">
     <img 
       data-src="https://via.placeholder.com/100x50"
       alt="Twitter"
@@ -18,5 +16,19 @@
       height="50"
     >
   </a>
+
+  <!-- Dikkat: Aşağıdaki script yorum içinde, görsel asla yüklenmiyor -->
+  <!-- Bu yüzden WAVE bu img'i erişilemez sayar -->
+  <!-- 
+  <script>
+    // Eğer bu aktif olursa WAVE hatayı vermez çünkü resim yüklenir.
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        img.setAttribute('src', img.getAttribute('data-src'));
+      });
+    });
+  </script>
+  -->
+
 </body>
 </html>
