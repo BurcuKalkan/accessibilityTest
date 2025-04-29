@@ -2,20 +2,20 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>WAVE Hata Testi</title>
+  <title>WAVE Linked Image Missing Alt Text Testi</title>
 </head>
 <body>
-  <h1>WAVE Hatası Test Sayfası</h1>
+  <h1>Hatalı Bağlantılı Görsel Testi</h1>
 
-  <!-- Görsel bağlantılı (linked) ama src yerine data-src var -->
-  <!-- Alt metin var ama WAVE bunu okuyamıyor çünkü resim yüklenmiyor -->
-  <a href="https://www.facebook.com/hurriyet/" title="Hürriyet Facebook" class="img-link">
-    <img
-      data-src="https://static.hurriyet.com.tr/static/images/redesign/ic-facebook.svg?v=azure-45801"
-      alt="Hürriyet Facebook"
-      title="Hürriyet Facebook"
-      width="16"
-      height="16"
+  <!-- HATA: Görselin src'si yanlış veya bozuk -->
+  <!-- Bu yüzden WAVE "Linked image missing alternative text" hatasını verir -->
+  <a href="https://www.example.com" title="Test Görseli" class="img-link">
+    <img 
+      src="https://example.com/bozuk-resim.png"  <!-- Bu resim yüklenemez -->
+      alt="Test Görseli"
+      title="Test Görseli"
+      width="100"
+      height="50"
     >
   </a>
 </body>
