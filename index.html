@@ -2,55 +2,20 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Türkçe Alt Text Testi - Hata Testi</title>
+  <title>WAVE Hata Taklidi</title>
 </head>
 <body>
-  <h1>Alt Text Türkçe Karakter Hata Testi</h1>
+  <h1>WAVE Hürriyet Hatası Taklidi</h1>
 
-  <p>Aşağıdaki resimlerin alt metinlerinde bazı hata örnekleri bulunacaktır:</p>
-
-  <!-- Eksik alt metin -->
-  <img src="https://via.placeholder.com/150">
-
-  <!-- Boş alt metin -->
-  <img src="https://via.placeholder.com/150" alt="">
-
-  <!-- Türkçe karakter bozulmuş (encoding hatası) -->
-  <img src="https://via.placeholder.com/150" alt="İstanbul’daki öğle güneşi">
-
-  <!-- Eksik alt metin ve Türkçe karakter -->
-  <img src="https://via.placeholder.com/150" alt="">
-
-  <!-- Türkçe karakterler içeriyor ama alt metin yok -->
-  <img src="https://via.placeholder.com/150" alt="şekerli çörek ve öğle yemeği">
-
-  <!-- Görsel kaynağı eksik ya da yüklenemeyen img (JS ile yüklenen bir içerik gibi) -->
-  <img src="https://via.placeholder.com/150" alt="Deprem öncesi şaşırtan olay 5 dakikadan fazla sürdü" title="Deprem öncesi şaşırtan olay 5 dakikadan fazla sürdü" class="layout1-fullbox__cover--img entered loading" width="424" height="282" data-ll-status="loading">
-  
-  <!-- Türkçe karakter içeriyor fakat kodlama hatası olabilecek bir örnek -->
-  <img src="https://via.placeholder.com/150" alt="Türkçe karakterler: ç, ğ, ö, ü, ş, İ">
-
-  <!-- İkinci görsel, Türkçe karakterle bir açıklama -->
-  <img src="https://via.placeholder.com/150" alt="ğ harfiyle başlayan img açıklaması">
-
-   <h1>WAVE Linked Image Missing Alt Text Hatası Testi</h1>
-
-  <!-- HATA 1: Alt metni olmayan bağlı (linked) görsel -->
-  <a href="https://twitter.com/Hurriyet">
-    <img src="https://static.hurriyet.com.tr/static/images/redesign/ic-twitter.svg?v=azure-45801" width="15" height="14">
+  <!-- Gerçek hatayı taklit eden yapı -->
+  <a href="/ornek-haber" class="img-link" title="Ferdi Kadıoğlundan müjdeli haber!" target="_blank">
+    <!-- Görsel sonradan JS ile yüklenecek gibi yapıldı -->
+    <img data-src="https://via.placeholder.com/218x111" alt="Ferdi Kadıoğlundan müjdeli haber" title="Ferdi Kadıoğlundan müjdeli haber" class="haber-gorsel" width="218" height="111">
   </a>
 
-  <!-- HATA 2: Alt metni var ama title metni ile aynı (redundant title text) -->
-  <a href="https://twitter.com/Hurriyet">
-    <img src="https://static.hurriyet.com.tr/static/images/redesign/ic-twitter.svg?v=azure-45801" width="15" height="14" alt="Hürriyet Twitter" title="Hürriyet Twitter">
+  <!-- Ek redundant link -->
+  <a href="/ornek-haber" title="Ferdi Kadıoğlundan müjdeli haber!">
+    <span>Ferdi Kadıoğlu'ndan müjdeli haber!</span>
   </a>
-
-  <a href="https://twitter.com/Hurriyet" class="sidebar__social--link img-link" title="Hürriyet Twitter" data-redirecter="checked">
-    Redundant title textLinked image missing alternative text
-  <img data-src="https://static.hurriyet.com.tr/static/images/redesign/ic-twitter.svg?v=azure-45801" width="15" height="14" alt="Hürriyet Twitter" title="Hürriyet Twitter">
-</a>
-
 </body>
 </html>
-
