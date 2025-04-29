@@ -2,59 +2,21 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Erişilebilirlik Test Sayfası - Akademik</title>
-  <style>
-    .image-link {
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-    .visual {
-      width: 220px;
-      height: 120px;
-    }
-  </style>
+  <title>Alt Text Var Ama Hata Veriyor</title>
 </head>
 <body>
-  <h1>Akademik Web Erişilebilirlik Test Sayfası</h1>
-  <p>Bu sayfa WAVE aracı ile aşağıdaki erişilebilirlik sorunlarını test etmek amacıyla hazırlanmıştır:</p>
+  <h1>Test: Alt Text var ama WAVE hata veriyor</h1>
 
-  <ul>
-    <li>Bağlantılı görsellerde eksik alt metin</li>
-    <li>Gereksiz tekrar eden <code>title</code> metni</li>
-    <li>Yinelenen bağlantı içerikleri</li>
-  </ul>
-
-  <!-- HATA 1: Alt metni olmayan bağlantılı görsel -->
-  <a href="https://example.com/paper123" class="image-link" title="Yayın detaylarını görüntüle">
-    <img src="https://via.placeholder.com/220x120" class="visual">
+  <!-- Görsel, src yerine data-src kullanırsa, WAVE bunu yok sayar -->
+  <!-- Bu yüzden alt olsa da hata verir -->
+  <a href="https://twitter.com/ornek" title="Twitter" class="img-link">
+    <img 
+      data-src="https://via.placeholder.com/100x50"
+      alt="Twitter"
+      title="Twitter"
+      width="100"
+      height="50"
+    >
   </a>
-
-  <!-- HATA 2: Alt metni title ile aynı -->
-  <a href="https://example.com/paper456" class="image-link">
-    <img src="https://via.placeholder.com/220x120" alt="Yayın detaylarını görüntüle" title="Yayın detaylarını görüntüle" class="visual">
-  </a>
-
-  <!-- HATA 3: Aynı bağlantı, aynı başlık, farklı içerik -->
-  <div>
-    <a href="https://example.com/paper123" title="Yayın detaylarını görüntüle">
-      <span>Yayın detaylarını görüntüle</span>
-    </a>
-  </div>
-
-  <!-- JS ile lazy-load gibi davranan görsel -->
-  <a href="https://example.com/visual-analysis" class="image-link" title="Görsel analiz">
-    <img data-src="https://via.placeholder.com/220x120" alt="Görsel analiz" title="Görsel analiz" class="visual">
-  </a>
-
-  <script>
-    // Lazy-load simülasyonu
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        document.querySelectorAll('img[data-src]').forEach(img => {
-          img.setAttribute('src', img.getAttribute('data-src'));
-        });
-      }, 1000);
-    });
-  </script>
 </body>
 </html>
