@@ -2,45 +2,19 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>WAVE Hata Tetikleme Testi</title>
+  <title>Hatalı Görsel Testi</title>
 </head>
 <body>
-  <h1>WAVE Testi: Linked Image Missing Alternative Text ve Redundant Title Text</h1>
+  <h1>Linked Image Missing Alt Text Testi</h1>
 
-  <!-- HATA 1: Görselin alt metni olmasına rağmen, alt metin eksik gibi algılanacak şekilde 'data-src' kullanıldı -->
-  <a href="https://www.linkedin.com/company/hurriyet/" class="sidebar__social--link img-link" title="Hürriyet Linkedin">
+  <a href="https://example.com" title="Hürriyet Facebook">
     <img 
-      src="https://static.hurriyet.com.tr/static/images/redesign/ic-linkedin.svg?v=azure-45801" 
-      width="17" 
-      height="16" 
-      alt="Hürriyet Linkedin" 
-      title="Hürriyet Linkedin">
+      data-src="https://static.hurriyet.com.tr/static/images/redesign/ic-facebook.svg?v=azure-45801"
+      alt="Hürriyet Facebook"
+      title="Hürriyet Facebook"
+      width="16"
+      height="16"
+    >
   </a>
-
-  <p>Yukarıdaki görselin alt metni doğru verilmiş olsa da, görselin yanlış yüklenmesi nedeniyle WAVE "Linked image missing alternative text" hatası verebilir.</p>
-
-  <!-- HATA 2: Aynı title ve alt metni olduğu için redundant title text hatası tetiklenebilir -->
-  <a href="https://www.facebook.com/hurriyet/" class="sidebar__social--link img-link" title="Hürriyet Facebook">
-    <img 
-      src="https://static.hurriyet.com.tr/static/images/redesign/ic-facebook.svg?v=azure-45801" 
-      width="16" 
-      height="16" 
-      alt="Hürriyet Facebook" 
-      title="Hürriyet Facebook">
-  </a>
-
-  <p>Bu görselin 'alt' ve 'title' metinleri aynı olduğu için WAVE "Redundant title text" hatasını verebilir.</p>
-
-  <!-- HATA 3: Görselin 'alt' metni verilmiş olmasına rağmen, alt metin gereksiz olabilir veya eksik algılanabilir -->
-  <a href="https://www.twitter.com/hurriyet" class="sidebar__social--link img-link" title="Hürriyet Twitter">
-    <img 
-      src="https://static.hurriyet.com.tr/static/images/redesign/ic-twitter.svg?v=azure-45801" 
-      width="15" 
-      height="14" 
-      alt="Hürriyet Twitter" 
-      title="Hürriyet Twitter">
-  </a>
-
-  <p>Bu görselde 'alt' ve 'title' metinleri aynı olduğu için redundant title hatası da tetiklenebilir.</p>
 </body>
 </html>
