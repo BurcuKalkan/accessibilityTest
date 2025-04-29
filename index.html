@@ -5,9 +5,9 @@
   <title>Linked Image Missing Alternative Text Testi</title>
 </head>
 <body>
-  <h1>WAVE Testi - Linked Image Missing Alternative Text</h1>
+  <h1>WAVE Testi - Linked Image Missing Alternative Text ve Redundant Title Text</h1>
 
-  <!-- Görselin alt metni doğru verilmiş olmasına rağmen, 'data-src' kullanımı WAVE'ın hatayı göstermesine yol açabilir -->
+  <!-- Görselin alt metni doğru verilmiş olmasına rağmen, 'data-src' kullanımı nedeniyle WAVE hatayı gösterebilir -->
   <a href="https://www.linkedin.com/company/hurriyet/" class="sidebar__social--link img-link" title="Hürriyet Linkedin">
     <img 
       data-src="https://static.hurriyet.com.tr/static/images/redesign/ic-linkedin.svg?v=azure-45801" 
@@ -17,9 +17,9 @@
       title="Hürriyet Linkedin">
   </a>
 
-  <p>Yukarıdaki görsel alt metni doğru verilmiş olsa da WAVE aracında yanlış bir şekilde "Linked image missing alternative text" hatası görmelisiniz.</p>
+  <p>Yukarıdaki görsel alt metni doğru verilmiş olsa da, 'data-src' nedeniyle WAVE "Linked image missing alternative text" hatası verebilir.</p>
 
-  <!-- Ayrıca, gereksiz 'title' kullanımı da hataya neden olacaktır -->
+  <!-- Aynı zamanda redundant title text hatasını da tetikliyoruz. -->
   <a href="https://www.facebook.com/hurriyet/" class="sidebar__social--link img-link" title="Hürriyet Facebook">
     <img 
       data-src="https://static.hurriyet.com.tr/static/images/redesign/ic-facebook.svg?v=azure-45801" 
@@ -29,5 +29,17 @@
       title="Hürriyet Facebook">
   </a>
 
+  <p>Bu görselin 'alt' ve 'title' metinleri aynı olduğu için WAVE "Redundant title text" hatasını verebilir.</p>
+
+  <!-- Alternatif: title metnini gereksiz şekilde ekleyerek redundant title hatası oluşturuyoruz -->
+  <a href="https://www.twitter.com/hurriyet" class="sidebar__social--link img-link" title="Hürriyet Twitter">
+    <img 
+      data-src="https://static.hurriyet.com.tr/static/images/redesign/ic-twitter.svg?v=azure-45801" 
+      width="15" 
+      height="14" 
+      alt="Hürriyet Twitter" 
+      title="Hürriyet Twitter">
+  </a>
 </body>
 </html>
+
