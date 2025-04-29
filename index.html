@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Alt Var Ama Hata Ver</title>
+  <title>Linked Image Missing Alternative Text</title>
+  <style>
+    /* Görseli gizlemek için CSS kullanılıyor */
+    .hidden-image {
+      display: none; /* Görseli tamamen gizler */
+    }
+  </style>
 </head>
 <body>
-  <a href="https://example.com">
-    <img data-src="https://via.placeholder.com/150" alt="Facebook logo">
+  <a href="https://www.instagram.com" title="Instagram Link">
+    <!-- Bu resim alt metnine sahip ama gizli olacak -->
+    <img src="https://via.placeholder.com/150" alt="Instagram Logo" class="hidden-image">
   </a>
 </body>
 </html>
