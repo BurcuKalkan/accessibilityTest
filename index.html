@@ -2,33 +2,21 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>WAVE Hata Üretme Testi</title>
+  <title>WAVE Hata Testi</title>
 </head>
 <body>
-  <h1>Alt Text Var Ama WAVE Hata Veriyor</h1>
+  <h1>WAVE Test Sayfası - Linked Image Missing Alt Text</h1>
 
-  <a href="https://twitter.com/ornek" class="img-link" title="Twitter">
+  <!-- Bu yapı hem redundant title hem de alt metin hatası verir -->
+  <a href="https://example.com" class="sidebar__social--link img-link" title="Hürriyet Twitter">
+    Redundant title text<br>
+    Linked image missing alternative text<br>
     <img 
-      data-src="https://via.placeholder.com/100x50"
-      alt="Twitter"
-      title="Twitter"
-      width="100"
-      height="50"
-    >
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" 
+      width="15" 
+      height="14" 
+      alt="Hürriyet Twitter" 
+      title="Hürriyet Twitter">
   </a>
-
-  <!-- Dikkat: Aşağıdaki script yorum içinde, görsel asla yüklenmiyor -->
-  <!-- Bu yüzden WAVE bu img'i erişilemez sayar -->
-  <!-- 
-  <script>
-    // Eğer bu aktif olursa WAVE hatayı vermez çünkü resim yüklenir.
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('img[data-src]').forEach(img => {
-        img.setAttribute('src', img.getAttribute('data-src'));
-      });
-    });
-  </script>
-  -->
-
 </body>
 </html>
