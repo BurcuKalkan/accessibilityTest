@@ -2,21 +2,32 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>WAVE Hata Testi</title>
+  <title>Linked Image Missing Alternative Text Testi</title>
 </head>
 <body>
-  <h1>WAVE Test Sayfası - Linked Image Missing Alt Text</h1>
+  <h1>WAVE Testi - Linked Image Missing Alternative Text</h1>
 
-  <!-- Bu yapı hem redundant title hem de alt metin hatası verir -->
-  <a href="https://example.com" class="sidebar__social--link img-link" title="Hürriyet Twitter">
-    Redundant title text<br>
-    Linked image missing alternative text<br>
+  <!-- Görselin alt metni doğru verilmiş olmasına rağmen, 'data-src' kullanımı WAVE'ın hatayı göstermesine yol açabilir -->
+  <a href="https://www.linkedin.com/company/hurriyet/" class="sidebar__social--link img-link" title="Hürriyet Linkedin">
     <img 
-      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" 
-      width="15" 
-      height="14" 
-      alt="Hürriyet Twitter" 
-      title="Hürriyet Twitter">
+      data-src="https://static.hurriyet.com.tr/static/images/redesign/ic-linkedin.svg?v=azure-45801" 
+      width="17" 
+      height="16" 
+      alt="Hürriyet Linkedin" 
+      title="Hürriyet Linkedin">
   </a>
+
+  <p>Yukarıdaki görsel alt metni doğru verilmiş olsa da WAVE aracında yanlış bir şekilde "Linked image missing alternative text" hatası görmelisiniz.</p>
+
+  <!-- Ayrıca, gereksiz 'title' kullanımı da hataya neden olacaktır -->
+  <a href="https://www.facebook.com/hurriyet/" class="sidebar__social--link img-link" title="Hürriyet Facebook">
+    <img 
+      data-src="https://static.hurriyet.com.tr/static/images/redesign/ic-facebook.svg?v=azure-45801" 
+      width="16" 
+      height="16" 
+      alt="Hürriyet Facebook" 
+      title="Hürriyet Facebook">
+  </a>
+
 </body>
 </html>
