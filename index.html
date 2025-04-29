@@ -2,13 +2,15 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Hatalı Görsel Testi</title>
+  <title>WAVE Hata Testi</title>
 </head>
 <body>
-  <h1>Linked Image Missing Alt Text Testi</h1>
+  <h1>WAVE Hatası Test Sayfası</h1>
 
-  <a href="https://example.com" title="Hürriyet Facebook">
-    <img 
+  <!-- Görsel bağlantılı (linked) ama src yerine data-src var -->
+  <!-- Alt metin var ama WAVE bunu okuyamıyor çünkü resim yüklenmiyor -->
+  <a href="https://www.facebook.com/hurriyet/" title="Hürriyet Facebook" class="img-link">
+    <img
       data-src="https://static.hurriyet.com.tr/static/images/redesign/ic-facebook.svg?v=azure-45801"
       alt="Hürriyet Facebook"
       title="Hürriyet Facebook"
