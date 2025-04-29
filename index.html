@@ -34,8 +34,18 @@
   <!-- İkinci görsel, Türkçe karakterle bir açıklama -->
   <img src="https://via.placeholder.com/150" alt="ğ harfiyle başlayan img açıklaması">
 
-  <!-- Hürriyet logosu gibi görsel, alt metni eksik ya da bozuk olabilir -->
-  <img class="sidebar__logo--img" alt="" title="Hürriyet - Haber, Son Dakika Haberler, Güncel Gazete Haberleri" data-src="https://static.hurriyet.com.tr/static/images/redesign/hurriyet-logo-red.svg?v=azure-45801" height="33" width="120">
+   <h1>WAVE Linked Image Missing Alt Text Hatası Testi</h1>
+
+  <!-- HATA 1: Alt metni olmayan bağlı (linked) görsel -->
+  <a href="https://twitter.com/Hurriyet">
+    <img src="https://static.hurriyet.com.tr/static/images/redesign/ic-twitter.svg?v=azure-45801" width="15" height="14">
+  </a>
+
+  <!-- HATA 2: Alt metni var ama title metni ile aynı (redundant title text) -->
+  <a href="https://twitter.com/Hurriyet" title="Hürriyet Twitter">
+    <img src="https://static.hurriyet.com.tr/static/images/redesign/ic-twitter.svg?v=azure-45801" width="15" height="14" alt="Hürriyet Twitter" title="Hürriyet Twitter">
+  </a>
+
 </body>
 </html>
 
