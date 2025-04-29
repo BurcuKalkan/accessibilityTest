@@ -2,41 +2,52 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>WAVE Hata Taklidi - Hürriyet Stili</title>
+  <title>Erişilebilirlik Test Sayfası - Akademik</title>
   <style>
-    .img-link {
+    .image-link {
       display: inline-block;
       margin-bottom: 20px;
     }
-    .haber-gorsel {
-      width: 218px;
-      height: 111px;
+    .visual {
+      width: 220px;
+      height: 120px;
     }
   </style>
 </head>
 <body>
-  <h1>WAVE Erişilebilirlik Hata Testi - Hürriyet Taklidi</h1>
+  <h1>Akademik Web Erişilebilirlik Test Sayfası</h1>
+  <p>Bu sayfa WAVE aracı ile aşağıdaki erişilebilirlik sorunlarını test etmek amacıyla hazırlanmıştır:</p>
 
-  <!-- HATA 1: Linked image with alt but only data-src (JavaScript ile yükleniyor gibi) -->
-  <a href="/ornek-haber" class="img-link" title="Ferdi Kadıoğlundan müjdeli haber!" target="_blank">
-    <img data-src="https://via.placeholder.com/218x111" alt="Ferdi Kadıoğlundan müjdeli haber" title="Ferdi Kadıoğlundan müjdeli haber" class="haber-gorsel">
+  <ul>
+    <li>Bağlantılı görsellerde eksik alt metin</li>
+    <li>Gereksiz tekrar eden <code>title</code> metni</li>
+    <li>Yinelenen bağlantı içerikleri</li>
+  </ul>
+
+  <!-- HATA 1: Alt metni olmayan bağlantılı görsel -->
+  <a href="https://example.com/paper123" class="image-link" title="Yayın detaylarını görüntüle">
+    <img src="https://via.placeholder.com/220x120" class="visual">
   </a>
 
-  <!-- HATA 2: Redundant text and link -->
+  <!-- HATA 2: Alt metni title ile aynı -->
+  <a href="https://example.com/paper456" class="image-link">
+    <img src="https://via.placeholder.com/220x120" alt="Yayın detaylarını görüntüle" title="Yayın detaylarını görüntüle" class="visual">
+  </a>
+
+  <!-- HATA 3: Aynı bağlantı, aynı başlık, farklı içerik -->
   <div>
-    <a href="/ornek-haber" title="Ferdi Kadıoğlundan müjdeli haber!" target="_blank">
-      <span>Ferdi Kadıoğlu'ndan müjdeli haber!</span>
+    <a href="https://example.com/paper123" title="Yayın detaylarını görüntüle">
+      <span>Yayın detaylarını görüntüle</span>
     </a>
   </div>
 
-  <!-- HATA 3: Linked image with no alt (tam hata) -->
-  <a href="/haber-no-alt" class="img-link">
-    <img src="https://via.placeholder.com/218x111">
+  <!-- JS ile lazy-load gibi davranan görsel -->
+  <a href="https://example.com/visual-analysis" class="image-link" title="Görsel analiz">
+    <img data-src="https://via.placeholder.com/220x120" alt="Görsel analiz" title="Görsel analiz" class="visual">
   </a>
 
-  <!-- Görseli yükleyen JS -->
   <script>
-    // 1 saniye sonra img'lerin src'si set ediliyor (Hürriyet gibi lazy-load etkisi)
+    // Lazy-load simülasyonu
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         document.querySelectorAll('img[data-src]').forEach(img => {
