@@ -2,20 +2,48 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>WAVE Hata Taklidi</title>
+  <title>WAVE Hata Taklidi - Hürriyet Stili</title>
+  <style>
+    .img-link {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .haber-gorsel {
+      width: 218px;
+      height: 111px;
+    }
+  </style>
 </head>
 <body>
-  <h1>WAVE Hürriyet Hatası Taklidi</h1>
+  <h1>WAVE Erişilebilirlik Hata Testi - Hürriyet Taklidi</h1>
 
-  <!-- Gerçek hatayı taklit eden yapı -->
+  <!-- HATA 1: Linked image with alt but only data-src (JavaScript ile yükleniyor gibi) -->
   <a href="/ornek-haber" class="img-link" title="Ferdi Kadıoğlundan müjdeli haber!" target="_blank">
-    <!-- Görsel sonradan JS ile yüklenecek gibi yapıldı -->
-    <img data-src="https://via.placeholder.com/218x111" alt="Ferdi Kadıoğlundan müjdeli haber" title="Ferdi Kadıoğlundan müjdeli haber" class="haber-gorsel" width="218" height="111">
+    <img data-src="https://via.placeholder.com/218x111" alt="Ferdi Kadıoğlundan müjdeli haber" title="Ferdi Kadıoğlundan müjdeli haber" class="haber-gorsel">
   </a>
 
-  <!-- Ek redundant link -->
-  <a href="/ornek-haber" title="Ferdi Kadıoğlundan müjdeli haber!">
-    <span>Ferdi Kadıoğlu'ndan müjdeli haber!</span>
+  <!-- HATA 2: Redundant text and link -->
+  <div>
+    <a href="/ornek-haber" title="Ferdi Kadıoğlundan müjdeli haber!" target="_blank">
+      <span>Ferdi Kadıoğlu'ndan müjdeli haber!</span>
+    </a>
+  </div>
+
+  <!-- HATA 3: Linked image with no alt (tam hata) -->
+  <a href="/haber-no-alt" class="img-link">
+    <img src="https://via.placeholder.com/218x111">
   </a>
+
+  <!-- Görseli yükleyen JS -->
+  <script>
+    // 1 saniye sonra img'lerin src'si set ediliyor (Hürriyet gibi lazy-load etkisi)
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          img.setAttribute('src', img.getAttribute('data-src'));
+        });
+      }, 1000);
+    });
+  </script>
 </body>
 </html>
