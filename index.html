@@ -1,19 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Linked Image Missing Alternative Text</title>
+  <title>Erişilebilirlik Test Sayfası</title>
   <style>
-    /* Görseli gizlemek için CSS kullanılıyor */
-    .hidden-image {
-      display: none; /* Görseli tamamen gizler */
+    .hidden-display {
+      display: none;
+    }
+    .hidden-visibility {
+      visibility: hidden;
+    }
+    .decorative {
+      width: 50px;
+      height: 50px;
     }
   </style>
 </head>
 <body>
-  <a href="https://www.instagram.com" title="Instagram Link">
-    <!-- Bu resim alt metnine sahip ama gizli olacak -->
-    <img src="https://via.placeholder.com/150" alt="Instagram Logo" class="hidden-image">
+  <h1>Web Erişilebilirlik Test Sayfası</h1>
+
+  <!-- 1. Alt metinsiz ve bağlantı içinde olan resim (Gerçek HATA) -->
+  <a href="https://example.com">
+    <img src="https://via.placeholder.com/100" />
   </a>
+
+  <!-- 2. Alt metin var ama görsel gizli (HATA) -->
+  <a href="https://example.com">
+    <img src="https://via.placeholder.com/100" alt="Gizli Görsel" class="hidden-display" />
+  </a>
+
+  <!-- 3. Alt metin var, Türkçe karakter içeriyor, görünür (DOĞRU - HATA DEĞİL) -->
+  <a href="https://example.com">
+    <img src="https://via.placeholder.com/100" alt="İstanbul’un logosu – Görsel bağlantı" />
+  </a>
+
+  <!-- 4. Alt metin var ama visibility ile gizlenmiş (HATA) -->
+  <a href="https://example.com">
+    <img src="https://via.placeholder.com/100" alt="Görünmez görsel" class="hidden-visibility" />
+  </a>
+
+  <!-- 5. Alt metin boş, dekoratif resim (DOĞRU - HATA DEĞİL) -->
+  <img src="https://via.placeholder.com/100" alt="" role="presentation" class="decorative" />
+
+  <!-- 6. Alt metin var, bağlantı dışında (DOĞRU) -->
+  <img src="https://via.placeholder.com/100" alt="Bu sadece bilgi veren bir görsel" />
+
+  <!-- 7. Türkçe karakterli alt metin, bağlantı içinde, görünür (DOĞRU) -->
+  <a href="https://example.com">
+    <img src="https://via.placeholder.com/100" alt="Çalışmalarımız hakkında bilgi almak için tıklayın." />
+  </a>
+
+  <!-- 8. Alt metni olan ama aria-hidden="true" olan görsel (EKSTRA: Ekran okuyucu bunu atlar) -->
+  <a href="https://example.com">
+    <img src="https://via.placeholder.com/100" alt="Gizli erişim" aria-hidden="true" />
+  </a>
+
 </body>
 </html>
