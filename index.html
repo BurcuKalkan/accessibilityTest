@@ -21,42 +21,63 @@
 
   <!-- 1. Alt metinsiz ve bağlantı içinde olan resim (Gerçek HATA) -->
   <a href="https://example.com">
-    <img src="https://via.placeholder.com/100" />
+    <img src="https://placekitten.com/100/100" />
   </a>
 
   <!-- 2. Alt metin var ama görsel gizli (HATA) -->
   <a href="https://example.com">
-    <img src="https://via.placeholder.com/100" alt="Gizli Görsel" class="hidden-display" />
+    <img src="https://placekitten.com/101/101" alt="Gizli Görsel" class="hidden-display" />
   </a>
 
-  <!-- 3. Alt metin var, Türkçe karakter içeriyor, görünür (DOĞRU - HATA DEĞİL) -->
+  <!-- 3. Alt metin var, Türkçe karakter içeriyor, görünür (DOĞRU) -->
   <a href="https://example.com">
-    <img src="https://via.placeholder.com/100" alt="İstanbul’un logosu – Görsel bağlantı" />
+    <img src="https://placekitten.com/102/102" alt="İstanbul’un logosu – Görsel bağlantı" />
   </a>
 
   <!-- 4. Alt metin var ama visibility ile gizlenmiş (HATA) -->
   <a href="https://example.com">
-    <img src="https://via.placeholder.com/100" alt="Görünmez görsel" class="hidden-visibility" />
+    <img src="https://placekitten.com/103/103" alt="Görünmez görsel" class="hidden-visibility" />
   </a>
 
+  <!-- 5. İngilizce alt metin, visibility ile gizli (HATA) -->
   <a href="https://example.com">
-    <img src="https://via.placeholder.com/100" alt="invisible image" class="hidden-visibility" />
+    <img src="https://placekitten.com/104/104" alt="Invisible image" class="hidden-visibility" />
   </a>
 
-  <!-- 5. Alt metin boş, dekoratif resim (DOĞRU - HATA DEĞİL) -->
-  <img src="https://via.placeholder.com/100" alt="" role="presentation" class="decorative" />
-
-  <!-- 6. Alt metin var, bağlantı dışında (DOĞRU) -->
-  <img src="https://via.placeholder.com/100" alt="Bu sadece bilgi veren bir görsel" />
-
-  <!-- 7. Türkçe karakterli alt metin, bağlantı içinde, görünür (DOĞRU) -->
+  <!-- 6. Fransızca alt metin, display none (HATA) -->
   <a href="https://example.com">
-    <img src="https://via.placeholder.com/100" alt="Çalışmalarımız hakkında bilgi almak için tıklayın." />
+    <img src="https://placekitten.com/105/105" alt="Image cachée" class="hidden-display" />
   </a>
 
-  <!-- 8. Alt metni olan ama aria-hidden="true" olan görsel (EKSTRA: Ekran okuyucu bunu atlar) -->
+  <!-- 7. İspanyolca alt metin, görünür (DOĞRU) -->
   <a href="https://example.com">
-    <img src="https://via.placeholder.com/100" alt="Gizli erişim" aria-hidden="true" />
+    <img src="https://placekitten.com/106/106" alt="Imagen de prueba para accesibilidad" />
+  </a>
+
+  <!-- 8. Alt metin boş, dekoratif resim (DOĞRU) -->
+  <img src="https://placekitten.com/107/107" alt="" role="presentation" class="decorative" />
+
+  <!-- 9. Alt metin var, bağlantı dışında (DOĞRU) -->
+  <img src="https://placekitten.com/108/108" alt="Bu sadece bilgi veren bir görsel" />
+
+  <!-- 10. Türkçe karakterli alt metin, bağlantı içinde, görünür (DOĞRU) -->
+  <a href="https://example.com">
+    <img src="https://placekitten.com/109/109" alt="Çalışmalarımız hakkında bilgi almak için tıklayın." />
+  </a>
+
+  <!-- 11. Alt metni olan ama aria-hidden="true" olan görsel (EKSTRA: Ekran okuyucu bunu atlar) -->
+  <a href="https://example.com">
+    <img src="https://placekitten.com/110/110" alt="Gizli erişim" aria-hidden="true" />
+  </a>
+
+  <!-- 12. Japonca alt metin (DOĞRU) -->
+  <a href="https://example.com">
+    <img src="https://placekitten.com/111/111" alt="アクセシビリティテスト用画像" />
+  </a>
+
+  <!-- 13. Almanca alt metin, görünmez (HATA) -->
+  <a href="https://example.com">
+    <img src="https://placekitten.com/112/112" alt="Verstecktes Bild" class="hidden-display" />
   </a>
 
 </body>
