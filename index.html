@@ -19,6 +19,30 @@
 <body>
   <h1>Web Erişilebilirlik Test Sayfası</h1>
 
+    <div>
+    <!-- Bu bağlantı içinde sadece bir <img> var ve alt metni boş -->
+    <a href="https://example.com" title="Görsele git">
+      <img src="https://via.placeholder.com/150" alt="" title="Görsele git">
+    </a>
+  </div>
+
+  <div>
+    <!-- Bu bağlantı içinde <img> var ama sadece data-src kullanılmış -->
+    <a href="https://example.com/news" title="Click to read">
+      <img data-src="https://via.placeholder.com/150" alt="News image" title="Click to read">
+    </a>
+  </div>
+
+  <div>
+    <!-- Redundant Link: Aynı URL iki farklı bağlantı içinde -->
+    <a href="/haber/123" title="Haber başlığı">
+      <img src="https://via.placeholder.com/150" alt="Haber başlığı" title="Haber başlığı">
+    </a>
+    <a href="/haber/123" title="Haber başlığı">
+      <span>Haber başlığı</span>
+    </a>
+  </div>
+
   <!-- Görseller -->
   <a href="https://example.com">
     <img src="https://placekitten.com/100/100" />
