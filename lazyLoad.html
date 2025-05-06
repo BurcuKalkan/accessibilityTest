@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Erişilebilirlik Testi</title>
+  <script>
+    // Sayfa yüklendikten sonra src'yi data-src'den alarak ekliyor
+    window.onload = function () {
+      const lazyImg = document.querySelector('img[data-src]');
+      if (lazyImg) {
+        lazyImg.setAttribute('src', lazyImg.getAttribute('data-src'));
+      }
+    };
+  </script>
+</head>
+<body>
+
+  <h1>Erişilebilirlik Test Sayfası</h1>
+
+  <!-- Görsel bağlantı içinde, ancak sadece data-src var -->
+  <a href="https://example.com" title="Haber görseli">
+    <img data-src="https://via.placeholder.com/150" alt="Haber görseli" title="Haber görseli">
+  </a>
+
+</body>
+</html>
