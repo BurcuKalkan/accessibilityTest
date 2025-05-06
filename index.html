@@ -19,118 +19,81 @@
 <body>
   <h1>Web Erişilebilirlik Test Sayfası</h1>
 
-  <!-- 1. Alt metinsiz ve bağlantı içinde olan resim (Gerçek HATA) -->
+  <!-- Görseller -->
   <a href="https://example.com">
     <img src="https://placekitten.com/100/100" />
   </a>
-
-  <!-- 2. Alt metin var ama görsel gizli (display:none) (HATA) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/101/101" alt="Gizli Görsel" class="hidden-display" />
   </a>
-
-  <!-- 3. Alt metin var, Türkçe karakter içeriyor, görünür (DOĞRU) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/102/102" alt="İstanbul’un logosu – Görsel bağlantı" />
   </a>
-
-  <!-- 4. Alt metin var ama visibility ile gizlenmiş (HATA) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/103/103" alt="Görünmez görsel" class="hidden-visibility" />
   </a>
-
-  <!-- 5. İngilizce alt metin, visibility ile gizli (HATA) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/104/104" alt="Invisible image" class="hidden-visibility" />
   </a>
-
-  <!-- 6. Japonca alt metin, visibility ile gizli (HATA) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/111/111" alt="アクセシビリティテスト用画像" class="hidden-visibility" />
   </a>
-
-  <!-- 7. Fransızca alt metin, visibility ile gizli (HATA) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/105/105" alt="Image cachée" class="hidden-visibility" />
   </a>
-
-  <!-- 8. İspanyolca alt metin, visibility ile gizli (HATA) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/106/106" alt="Imagen de prueba para accesibilidad" class="hidden-visibility" />
   </a>
-
-  <!-- 9. Almanca alt metin, visibility ile gizli (HATA) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/112/112" alt="Verstecktes Bild" class="hidden-visibility" />
   </a>
-
-  <!-- 10. Fransızca alt metin, display:none (HATA) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/105/105" alt="Image cachée" class="hidden-display" />
   </a>
-
-  <!-- 11. İspanyolca alt metin, görünür (DOĞRU) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/106/106" alt="Imagen de prueba para accesibilidad" />
   </a>
-
-  <!-- 12. Alt metin boş, dekoratif resim (DOĞRU) -->
   <img src="https://placekitten.com/107/107" alt="" role="presentation" class="decorative" />
-
-  <!-- 13. Alt metin var, bağlantı dışında (DOĞRU) -->
   <img src="https://placekitten.com/108/108" alt="Bu sadece bilgi veren bir görsel" />
-
-  <!-- 14. Türkçe karakterli alt metin, bağlantı içinde, görünür (DOĞRU) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/109/109" alt="Çalışmalarımız hakkında bilgi almak için tıklayın." />
   </a>
-
-  <!-- 15. Alt metni olan ama aria-hidden="true" olan görsel (EKSTRA: Ekran okuyucu bunu atlar) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/110/110" alt="Gizli erişim" aria-hidden="true" />
   </a>
-
-  <!-- 16. Japonca alt metin, görünür (DOĞRU) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/111/111" alt="アクセシビリティテスト用画像" />
   </a>
-
-  <!-- 17. Almanca alt metin, display:none (HATA) -->
   <a href="https://example.com">
     <img src="https://placekitten.com/112/112" alt="Verstecktes Bild" class="hidden-display" />
   </a>
 
-  <!-- 18. Başlık etiketleri -->
-<h2 class="hidden-display">Gizli Başlık (display:none)</h2>
-<h2 class="hidden-visibility">Gizli Başlık (visibility:hidden)</h2>
-<h2 aria-hidden="true">Gizli Başlık (aria-hidden)</h2>
+  <!-- Butonlar -->
+  <button style="display:none;">Tıklanamaz</button>
+  <button style="visibility:hidden;">Görünmeyen buton</button>
+  <button aria-hidden="true">Ekran okuyucuya kapalı</button>
+  <button style="display:none;">İçeriği Göster</button>
 
-<!-- 19. Paragraf etiketleri -->
-<p class="hidden-display">Gizli Paragraf (display:none)</p>
-<p class="hidden-visibility">Gizli Paragraf (visibility:hidden)</p>
-<p aria-hidden="true">Gizli Paragraf (aria-hidden)</p>
+  <!-- Ek Öğeler -->
+  <!-- Başlıklar -->
+  <h2 class="hidden-display">Gizli Başlık (display:none)</h2>
+  <h2 class="hidden-visibility">Gizli Başlık (visibility:hidden)</h2>
+  <h2 aria-hidden="true">Gizli Başlık (aria-hidden)</h2>
 
-<!-- 20. Bağlantı etiketleri -->
-<a href="#" class="hidden-display">Gizli Link (display:none)</a>
-<a href="#" class="hidden-visibility">Gizli Link (visibility:hidden)</a>
-<a href="#" aria-hidden="true">Gizli Link (aria-hidden)</a>
+  <!-- Paragraflar -->
+  <p class="hidden-display">Gizli Paragraf (display:none)</p>
+  <p class="hidden-visibility">Gizli Paragraf (visibility:hidden)</p>
+  <p aria-hidden="true">Gizli Paragraf (aria-hidden)</p>
 
-<!-- 21. Form öğeleri -->
-<label class="hidden-display">Gizli Etiket (display:none):</label>
-<input type="text" placeholder="Adınız" class="hidden-visibility" />
-<textarea aria-hidden="true">Gizli metin alanı</textarea>
+  <!-- Bağlantılar -->
+  <a href="#" class="hidden-display">Gizli Link (display:none)</a>
+  <a href="#" class="hidden-visibility">Gizli Link (visibility:hidden)</a>
+  <a href="#" aria-hidden="true">Gizli Link (aria-hidden)</a>
 
-  <!-- Görünmeyen ama erişilebilir buton (gizli ama aria-hidden değil) -->
-<button style="display:none;">Tıklanamaz</button>
-
-<!-- visibility gizli buton -->
-<button style="visibility:hidden;">Görünmeyen buton</button>
-
-<!-- aria-hidden buton -->
-<button aria-hidden="true">Ekran okuyucuya kapalı</button>
-
-<!-- Türkçe karakterli ama görünmeyen buton -->
-<button style="display:none;">İçeriği Göster</button>
+  <!-- Form elemanları -->
+  <label class="hidden-display">Gizli Etiket (display:none):</label>
+  <input type="text" placeholder="Adınız" class="hidden-visibility" />
+  <textarea aria-hidden="true">Gizli metin alanı</textarea>
 
 </body>
 </html>
