@@ -91,9 +91,37 @@
   <a href="#" aria-hidden="true">Gizli Link (aria-hidden)</a>
 
   <!-- Form elemanları -->
-  <label class="hidden-display">Gizli Etiket (display:none):</label>
-  <input type="text" placeholder="Adınız" class="hidden-visibility" />
-  <textarea aria-hidden="true">Gizli metin alanı</textarea>
+<h2>Form Alanları Erişilebilirlik Testi</h2>
+
+<!-- 1. Görünür input ve doğru label -->
+<label for="ad1">Adınız (doğru örnek):</label>
+<input type="text" id="ad1" placeholder="Adınızı yazın" />
+
+<!-- 2. Görünür input ve eksik label -->
+<input type="text" id="ad2" placeholder="Eksik etiketli input" />
+
+<!-- 3. Gizli input (display:none) ve label var -->
+<label for="ad3">Gizli Ad (label var, ama input gizli):</label>
+<input type="text" id="ad3" style="display:none;" placeholder="Gizli input" />
+
+<!-- 4. Gizli input (visibility:hidden) ve label yok -->
+<input type="text" id="ad4" style="visibility:hidden;" placeholder="Etiketsiz ve gizli input" />
+
+<!-- 5. Görünür input, aria-hidden="true", label var -->
+<label for="ad5">Adınız (aria-hidden):</label>
+<input type="text" id="ad5" aria-hidden="true" placeholder="Ekran okuyucuya kapalı" />
+
+<!-- 6. Textarea – etiketsiz -->
+<textarea placeholder="Etiketsiz textarea"></textarea>
+
+<!-- 7. Textarea – etiketli -->
+<label for="mesaj1">Mesajınız:</label>
+<textarea id="mesaj1" placeholder="Bir mesaj yazın..."></textarea>
+
+<!-- 8. Textarea – gizli (aria-hidden), etiketli -->
+<label for="mesaj2">Gizli Mesaj Alanı:</label>
+<textarea id="mesaj2" aria-hidden="true">Gizli metin</textarea>
+
 
 </body>
 </html>
