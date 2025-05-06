@@ -5,10 +5,12 @@
   <title>Erişilebilirlik Testi</title>
   <script>
     window.onload = function () {
-      const lazyImg = document.querySelector('img[data-src]');
-      if (lazyImg) {
-        lazyImg.setAttribute('src', lazyImg.getAttribute('data-src'));
-      }
+      setTimeout(function () {
+        const lazyImg = document.querySelector('img[data-src]');
+        if (lazyImg) {
+          lazyImg.setAttribute('src', lazyImg.getAttribute('data-src'));
+        }
+      }, 2000);
     };
   </script>
 </head>
@@ -16,7 +18,7 @@
 
 <h1>Erişilebilirlik Test Sayfası</h1>
 
-<!-- HATA: WAVE burada "linked image missing alternative text" hatası verir -->
+<!-- WAVE burada "linked image missing alternative text" hatası verecektir -->
 <a href="https://example.com" title="Haber görseli">
   <img data-src="https://via.placeholder.com/150" alt="Haber görseli" title="Haber görseli">
 </a>
