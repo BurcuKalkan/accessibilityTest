@@ -2,26 +2,18 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Erişilebilirlik Hatası Testi</title>
-  <script>
-    // Sayfa yüklendikten 2 saniye sonra src atanıyor
-    window.onload = function () {
-      setTimeout(() => {
-        const lazyImg = document.querySelector('img[data-src]');
-        if (lazyImg) {
-          lazyImg.setAttribute('src', lazyImg.getAttribute('data-src'));
-        }
-      }, 200000);
-    };
-  </script>
+  <title>WAVE Lazy Load Test</title>
 </head>
 <body>
 
-<h1>WAVE Hatası Test Sayfası</h1>
+<h1>Alt metni olan ama yüklenmemiş görsel</h1>
 
-<!-- WAVE burada "Linked image missing alternative text" hatası verecek -->
-<a href="https://example.com" title="Haber görseli">
-  <img data-src="https://via.placeholder.com/150?rand=123" title="Haber görseli">
+<!-- Bağlantı içindeki görsel -->
+<a href="https://example.com" title="Görsel başlığı">
+  <img data-src="https://via.placeholder.com/150" 
+       alt="Görsel başlığı" 
+       title="Görsel başlığı"
+       width="150" height="150">
 </a>
 
 </body>
