@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <title>WAVE Lazy Load Test</title>
   <script>
-    window.onload = function () { 
-      setTimeout(() => { 
-        const img = document.querySelector('img[data-src]'); 
-        if (img) { 
-          img.setAttribute('src', img.getAttribute('data-src')); 
-        } 
+    window.onload = function () {
+      setTimeout(() => {
+        const img = document.querySelector('img[data-src]');
+        if (img) {
+          img.setAttribute('src', img.getAttribute('data-src'));
+        }
       }, 5000); // WAVE bu sırada taramış olacak
     };
   </script>
