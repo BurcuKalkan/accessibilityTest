@@ -2,28 +2,32 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>WAVE Hata Testi</title>
-  <script>
-    window.onload = function () {
-      setTimeout(() => {
-        const img = document.getElementById('testImage');
-        img.setAttribute('src', 'https://via.placeholder.com/150');
-      }, 5000);
-    };
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazy Loading Resim Hatası</title>
 </head>
 <body>
 
-<div class="box__item box-sm__item">
-  <a href="/sporarena/galatasaray-baskani-dursun-ozbekten-osimhen-ve-transfer-aciklamasi-42791571" class="box__cover box-sm__cover" title="Başkandan Osimhen transferi i&#231;in cevap" target="_blank">
-    <img data-src="https://image.hurimg.com/i/hurriyet/75/218x111/681b0a567f24b016864e94e3.jpg" alt="Başkandan Osimhen transferi için cevap" title="Başkandan Osimhen transferi için cevap" class="box__cover--img box-sm__cover--img"  width ="218" height="111" />
-  </a>
-  <div class="box__content box-sm__content">
-    <a target="_blank" href="/sporarena/galatasaray-baskani-dursun-ozbekten-osimhen-ve-transfer-aciklamasi-42791571" title="Başkandan Osimhen transferi i&#231;in cevap">
-  <span class="box__title box-sm__title">Başkandan Osimhen transferi i&#231;in cevap</span>
-    </a>
-  </div>
-</div>
+<h1>Lazy Loading Örneği</h1>
+
+<p>Bu sayfada lazy loading kullanılarak yüklenen bir resim bulunmaktadır. WAVE, bu resmi düzgün şekilde analiz edemeyebilir ve "Linked image missing alternative text" hatası verebilir.</p>
+
+<!-- Lazy loading yapan resim -->
+<a href="https://www.hurriyet.com.tr/haberleri/abdulkadir-uraloglu" target="_blank" title="Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız">
+  <img class="lazy-load" data-src="https://image.hurimg.com/i/hurriyet/75/66x66/681b242c544b97f2965bb39c.jpg" alt="Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız" title="Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız" width="66" height="66">
+</a>
+
+<script>
+  // Lazy loading için basit bir JavaScript kodu
+  document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.lazy-load');
+    
+    // Sayfa yüklendiğinde resimleri yüklemek
+    images.forEach((img) => {
+      img.src = img.getAttribute('data-src');
+      img.onload = () => img.removeAttribute('data-src');  // Lazy loaded resim yüklendiğinde data-src özelliğini kaldırıyoruz
+    });
+  });
+</script>
 
 </body>
 </html>
