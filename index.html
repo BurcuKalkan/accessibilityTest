@@ -22,10 +22,12 @@
     const images = document.querySelectorAll('.lazy-load');
     
     // Sayfa yüklendiğinde resimleri yüklemek
-    images.forEach((img) => {
-      img.src = img.getAttribute('data-src');
-      img.onload = () => img.removeAttribute('data-src');  // Lazy loaded resim yüklendiğinde data-src özelliğini kaldırıyoruz
-    });
+    setTimeout(() => {
+      images.forEach((img) => {
+        img.src = img.getAttribute('data-src');
+        img.onload = () => img.removeAttribute('data-src');  // Lazy loaded resim yüklendiğinde data-src özelliğini kaldırıyoruz
+      });
+    }, 5000); // 5 saniye gecikme ekledik
   });
 </script>
 
