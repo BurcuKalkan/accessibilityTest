@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <title>WAVE Lazy Load Test</title>
   <script>
-    window.onload = function () {
-      setTimeout(() => {
-        const img = document.querySelector('img[data-src]');
-        if (img) {
-          img.setAttribute('src', img.getAttribute('data-src'));
-        }
-      }, 5000); // WAVE bu sırada taramış olur
+    window.onload = function () { 
+      setTimeout(() => { 
+        const img = document.querySelector('img[data-src]'); 
+        if (img) { 
+          img.setAttribute('src', img.getAttribute('data-src')); 
+        } 
+      }, 5000); // WAVE bu sırada taramış olacak
     };
   </script>
 </head>
@@ -18,11 +18,9 @@
 
 <h1>Alt metni olan ama yüklenmemiş görsel</h1>
 
+<!-- WAVE burada "Linked image missing alternative text" hatası verecek -->
 <a href="https://example.com" title="Görsel başlığı">
-  <img data-src="https://via.placeholder.com/150" 
-       alt="Görsel başlığı" 
-       title="Görsel başlığı"
-       width="150" height="150">
+  <img data-src="https://via.placeholder.com/150" alt="Görsel başlığı" title="Görsel başlığı" width="150" height="150">
 </a>
 
 </body>
