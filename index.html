@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>WAVE Testi</title>
+  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        const img = document.querySelector('img[data-src]');
+        img.setAttribute('src', img.getAttribute('data-src'));
+      }, 5000);
+    };
+  </script>
 </head>
 <body>
 
 <a href="https://example.com">
-  <img data-src="https://via.placeholder.com/150" alt="Example image with data-src" width="150" height="150">
+  <img data-src="https://via.placeholder.com/150" alt="Sonradan yüklenecek resim">
 </a>
 
 </body>
