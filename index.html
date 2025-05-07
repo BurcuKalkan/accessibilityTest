@@ -2,29 +2,17 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>WAVE Hata Örneği - Linked Image</title>
-  <script>
-    window.onload = function () {
-      setTimeout(() => {
-        const img = document.querySelector('img[data-src]');
-        if (img) {
-          img.setAttribute('src', img.getAttribute('data-src'));
-        }
-      }, 5000); // 5 saniye sonra görsel yüklenecek
-    };
-  </script>
+  <title>Linked Image with Alternative Text Hatayı Test Et</title>
 </head>
 <body>
 
 <h1>Linked Image with Alternative Text Hatayı Test Et</h1>
 
-<!-- Bağlantı içindeki görselin alt metni var ancak bağlantının içinde başka metin yok -->
+<!-- Bağlantı içinde görsel ve metin -->
 <a href="https://example.com">
-  <!-- Görselin alt metni var -->
-  <img data-src="https://via.placeholder.com/150" alt="Açıklama içeren görsel" width="150" height="150">
+  <img src="https://via.placeholder.com/150" alt="Açıklama içeren görsel" width="150" height="150">
+  Link metni ekleyin
 </a>
-
-  <img src="example.jpg" alt="image">
 
 </body>
 </html>
