@@ -2,12 +2,12 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>WAVE Testi</title>
+  <title>WAVE Hatası Test</title>
   <script>
-    window.onload = () => {
+    window.onload = function () {
       setTimeout(() => {
-        const img = document.querySelector('img[data-src]');
-        img.setAttribute('src', img.getAttribute('data-src'));
+        const img = document.getElementById('testImage');
+        img.setAttribute('src', 'https://via.placeholder.com/150');
       }, 5000);
     };
   </script>
@@ -15,7 +15,7 @@
 <body>
 
 <a href="https://example.com">
-  <img data-src="https://via.placeholder.com/150" alt="Sonradan yüklenecek resim">
+  <img id="testImage" alt="Görsel açıklaması" width="150" height="150">
 </a>
 
 </body>
