@@ -9,7 +9,7 @@
 
 <h1>Lazy Loading Örneği</h1>
 
-<p>Bu sayfada lazy loading kullanılarak yüklenen birçok resim bulunmaktadır. WAVE, bu resimleri düzgün şekilde analiz edemeyebilir ve "Linked image missing alternative text" hatası verebilir.</p>
+<p>Bu sayfada lazy loading kullanılarak yüklenen birçok resim bulunmaktadır. WAVE, bu resimleri düzgün şekilde analiz edemeyebilir ve "Linked image missing alternative text" ve "Redundant title text" hatası verebilir.</p>
 
 <!-- Lazy loading yapan resimler -->
 <div id="images-container">
@@ -22,19 +22,19 @@
     const container = document.getElementById('images-container');
     
     // 100 resim eklemek için döngü
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 500; i++) {  // 5 resim ekleyerek test edelim
       // Yeni bir <a> etiketi oluşturuluyor
       const aTag = document.createElement('a');
-      aTag.href = "https://www.hurriyet.com.tr/haberleri/abdulkadir-uraloglu";
+      aTag.href = "https://bigpara.hurriyet.com.tr/haberler/ekonomi-haberleri/bakan-uraloglu-cocuklarimizi-dijital-dunyanin-risklerinden-koruyacagiz_ID1611360/";
       aTag.target = "_blank";
-      aTag.title = "Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız";
-      
+      aTag.title = "Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız";  // Redundant title text hatası için
+
       // Yeni bir <img> etiketi oluşturuluyor
       const imgTag = document.createElement('img');
       imgTag.classList.add('lazy-load');
       imgTag.setAttribute('data-src', 'https://image.hurimg.com/i/hurriyet/75/66x66/681b242c544b97f2965bb39c.jpg');
-      imgTag.setAttribute('alt', 'Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız');
-      imgTag.setAttribute('title', 'Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız');
+      imgTag.setAttribute('alt', 'Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız');  // Linked image missing alternative text hatası için
+      imgTag.setAttribute('title', 'Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız');  // Redundant title text hatası için
       imgTag.setAttribute('width', '66');
       imgTag.setAttribute('height', '66');
       
@@ -44,11 +44,6 @@
       // Yeni oluşturulan <a> etiketi container'a ekleniyor
       container.appendChild(aTag);
     }
-
-    // Lazy loading için resimleri yükleme işlemi
-    const images = document.querySelectorAll('.lazy-load');
-    images.forEach((img) => {
-    });
   });
 </script>
 
