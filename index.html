@@ -25,21 +25,17 @@
     <img data-src="https://via.placeholder.com/150" alt="Örnek görsel" title="Örnek görsel" />
   </a>
 
-    <div>
-    <!-- Bu bağlantı içinde sadece bir <img> var ve alt metni boş -->
-    <a href="https://example.com" title="Görsele git">
-      <img src="https://via.placeholder.com/150" alt="" title="Görsele git">
-    </a>
-  </div>
-
+     <!-- Seçenek 2: Görsel görünmezse, alternatif erişilebilir metin kullanılmalı -->
   <a href="https://example.com" aria-label="Anasayfaya git">
   <img src="https://placekitten.com/112/112" alt="" class="hidden-visibility">
 </a>
 
+   <!--  Seçenek 1: Görsel görünür olmalı -->
 <a href="https://example.com">
   <img src="https://placekitten.com/112/112" alt="Anasayfaya git">
 </a>
 
+  
   <div>
     <!-- Bu bağlantı içinde <img> var ama sadece data-src kullanılmış -->
     <a href="https://example.com/news" title="Click to read">
@@ -54,6 +50,13 @@
     </a>
     <a href="/haber/123" title="Haber başlığı">
       <span>Haber başlığı</span>
+    </a>
+  </div>
+
+      <div>
+    <!-- Bu bağlantı içinde sadece bir <img> var ve alt metni boş -->
+    <a href="https://example.com" title="Görsele git">
+      <img src="https://via.placeholder.com/150" alt="" title="Görsele git">
     </a>
   </div>
 
