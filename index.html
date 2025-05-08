@@ -2,71 +2,157 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lazy Loading Resim Hatası</title>
+  <title>Erişilebilirlik Test Sayfası</title>
+  <style>
+    .hidden-display {
+      display: none;
+    }
+    .hidden-visibility {
+      visibility: hidden;
+    }
+    .decorative {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
 </head>
 <body>
+  <h1>Web Erişilebilirlik Test Sayfası</h1>
 
-<h1>Lazy Loading Örneği</h1>
+<div class="box__item box-lg__item " ><a target="_blank" href="/sporarena/milli-karateciler-ermenistandaki-avrupa-sampiyonasinda-tatamiye-cikacak-42790648" title="Milli karateciler, Ermenistandaki Avrupa Şampiyonasında tatamiye &#231;ıkacak" class="box__cover box-lg__cover"><img data-src="https://image.hurimg.com/i/hurriyet/75/296x223/6819e1437f24b016864e8e48.jpg" alt="Milli karateciler, Ermenistandaki Avrupa Şampiyonasında tatamiye çıkacak" title="Milli karateciler, Ermenistandaki Avrupa Şampiyonasında tatamiye çıkacak" class="box__cover--img box-lg__cover--img"  width ="296" height="223" /></a><a target="_blank" href="/sporarena/milli-karateciler-ermenistandaki-avrupa-sampiyonasinda-tatamiye-cikacak-42790648" title="Milli karateciler, Ermenistandaki Avrupa Şampiyonasında tatamiye &#231;ıkacak" class="box__content box-lg__content"><span class="box__title box-lg__title">Milli karateciler, Ermenistan&#39;daki Avrupa Şampiyonası&#39;nda tatamiye &#231;ıkacak</span></a><a target="_blank" href="https://www.hurriyet.com.tr/haberleri/avrupa-karate-sampiyonasi" title="Avrupa Karate Şampiyonası" data-google-interstitial="false" class="box__tag">#Avrupa Karate Şampiyonası</a></div>
 
-<p>Bu sayfada lazy loading kullanılarak yüklenen birçok resim bulunmaktadır. WAVE, bu resimleri düzgün şekilde analiz edemeyebilir ve "Linked image missing alternative text" ve "Redundant title text" hatası verebilir.</p>
+    <!-- Bu bağlantı içindeki resimde alt metin var gibi görünse de src yerine data-src kullanılıyor -->
+  <a href="https://example.com" title="Örnek görsel">
+    <img data-src="https://via.placeholder.com/150" alt="Örnek görsel" title="Örnek görsel" />
+  </a>
 
-<!-- Lazy loading yapan resimler -->
-<div id="images-container">
-  <!-- Resimler burada JavaScript ile eklenecek -->
-</div>
+    <div>
+    <!-- Bu bağlantı içinde sadece bir <img> var ve alt metni boş -->
+    <a href="https://example.com" title="Görsele git">
+      <img src="https://via.placeholder.com/150" alt="" title="Görsele git">
+    </a>
+  </div>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const container = document.createElement('div');
-    document.body.appendChild(container);
+  <div>
+    <!-- Bu bağlantı içinde <img> var ama sadece data-src kullanılmış -->
+    <a href="https://example.com/news" title="Click to read">
+      <img data-src="https://via.placeholder.com/150" alt="News image" title="Click to read">
+    </a>
+  </div>
 
-    const a = document.createElement('a');
-    a.href = "https://example.com";
-    a.title = "Açıklama metni";
+  <div>
+    <!-- Redundant Link: Aynı URL iki farklı bağlantı içinde -->
+    <a href="/haber/123" title="Haber başlığı">
+      <img src="https://via.placeholder.com/150" alt="Haber başlığı" title="Haber başlığı">
+    </a>
+    <a href="/haber/123" title="Haber başlığı">
+      <span>Haber başlığı</span>
+    </a>
+  </div>
 
-    const img = document.createElement('img');
-    img.setAttribute('data-src', 'https://via.placeholder.com/150');
-    img.setAttribute('alt', 'Açıklama metni');
-    img.setAttribute('title', 'Açıklama metni');
-    img.width = 150;
-    img.height = 150;
+  <!-- Görseller -->
+  <a href="https://example.com">
+    <img src="https://placekitten.com/100/100" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/101/101" alt="Gizli Görsel" class="hidden-display" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/102/102" alt="İstanbul’un logosu – Görsel bağlantı" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/103/103" alt="Görünmez görsel" class="hidden-visibility" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/104/104" alt="Invisible image" class="hidden-visibility" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/111/111" alt="アクセシビリティテスト用画像" class="hidden-visibility" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/105/105" alt="Image cachée" class="hidden-visibility" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/106/106" alt="Imagen de prueba para accesibilidad" class="hidden-visibility" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/112/112" alt="Verstecktes Bild" class="hidden-visibility" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/105/105" alt="Image cachée" class="hidden-display" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/106/106" alt="Imagen de prueba para accesibilidad" />
+  </a>
+  <img src="https://placekitten.com/107/107" alt="" role="presentation" class="decorative" />
+  <img src="https://placekitten.com/108/108" alt="Bu sadece bilgi veren bir görsel" />
+  <a href="https://example.com">
+    <img src="https://placekitten.com/109/109" alt="Çalışmalarımız hakkında bilgi almak için tıklayın." />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/110/110" alt="Gizli erişim" aria-hidden="true" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/111/111" alt="アクセシビリティテスト用画像" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/112/112" alt="Verstecktes Bild" class="hidden-display" />
+  </a>
 
-    a.appendChild(img);
-    container.appendChild(a);
-  });
-</script>
+  <!-- Butonlar -->
+  <button style="display:none;">Tıklanamaz</button>
+  <button style="visibility:hidden;">Görünmeyen buton</button>
+  <button aria-hidden="true">Ekran okuyucuya kapalı</button>
+  <button style="display:none;">İçeriği Göster</button>
 
-<script>
-  // Lazy loading için basit bir JavaScript kodu
-  document.addEventListener("DOMContentLoaded", function() {
-    const container = document.getElementById('images-container');
-    
-    // 100 resim eklemek için döngü
-    for (let i = 0; i < 100; i++) {  // 5 resim ekleyerek test edelim
-      // Yeni bir <a> etiketi oluşturuluyor
-      const aTag = document.createElement('a');
-      aTag.href = "https://bigpara.hurriyet.com.tr/haberler/ekonomi-haberleri/bakan-uraloglu-cocuklarimizi-dijital-dunyanin-risklerinden-koruyacagiz_ID1611360/";
-      aTag.target = "_blank";
-      aTag.title = "Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız";  // Redundant title text hatası için
+  <!-- Ek Öğeler -->
+  <!-- Başlıklar -->
+  <h2 class="hidden-display">Gizli Başlık (display:none)</h2>
+  <h2 class="hidden-visibility">Gizli Başlık (visibility:hidden)</h2>
+  <h2 aria-hidden="true">Gizli Başlık (aria-hidden)</h2>
 
-      // Yeni bir <img> etiketi oluşturuluyor
-      const imgTag = document.createElement('img');
-      imgTag.classList.add('lazy-load');
-      imgTag.setAttribute('src', 'https://cdn.wikimg.net/en/zeldawiki/images/thumb/f/fc/EoW_Link_Render.png/585px-EoW_Link_Render.png?20240828153200');
-      imgTag.setAttribute('alt', 'Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız');  // Linked image missing alternative text hatası için
-      imgTag.setAttribute('title', 'Bakan Uraloğlu: Çocuklarımızı dijital dünyanın risklerinden koruyacağız');  // Redundant title text hatası için
-      imgTag.setAttribute('width', '66');
-      imgTag.setAttribute('height', '66');
-      
-      // <a> etiketi içine <img> etiketi ekleniyor
-      aTag.appendChild(imgTag);
-      
-      // Yeni oluşturulan <a> etiketi container'a ekleniyor
-      container.appendChild(aTag);
-    }
-  });
-</script>
+  <!-- Paragraflar -->
+  <p class="hidden-display">Gizli Paragraf (display:none)</p>
+  <p class="hidden-visibility">Gizli Paragraf (visibility:hidden)</p>
+  <p aria-hidden="true">Gizli Paragraf (aria-hidden)</p>
+
+  <!-- Bağlantılar -->
+  <a href="#" class="hidden-display">Gizli Link (display:none)</a>
+  <a href="#" class="hidden-visibility">Gizli Link (visibility:hidden)</a>
+  <a href="#" aria-hidden="true">Gizli Link (aria-hidden)</a>
+
+  <!-- Form elemanları -->
+<h2>Form Alanları Erişilebilirlik Testi</h2>
+
+<!-- 1. Görünür input ve doğru label -->
+<label for="ad1">Adınız (doğru örnek):</label>
+<input type="text" id="ad1" placeholder="Adınızı yazın" />
+
+<!-- 2. Görünür input ve eksik label -->
+<input type="text" id="ad2" placeholder="Eksik etiketli input" />
+
+<!-- 3. Gizli input (display:none) ve label var -->
+<label for="ad3">Gizli Ad (label var, ama input gizli):</label>
+<input type="text" id="ad3" style="display:none;" placeholder="Gizli input" />
+
+<!-- 4. Gizli input (visibility:hidden) ve label yok -->
+<input type="text" id="ad4" style="visibility:hidden;" placeholder="Etiketsiz ve gizli input" />
+
+<!-- 5. Görünür input, aria-hidden="true", label var -->
+<label for="ad5">Adınız (aria-hidden):</label>
+<input type="text" id="ad5" aria-hidden="true" placeholder="Ekran okuyucuya kapalı" />
+
+<!-- 6. Textarea – etiketsiz -->
+<textarea placeholder="Etiketsiz textarea"></textarea>
+
+<!-- 7. Textarea – etiketli -->
+<label for="mesaj1">Mesajınız:</label>
+<textarea id="mesaj1" placeholder="Bir mesaj yazın..."></textarea>
+
+<!-- 8. Textarea – gizli (aria-hidden), etiketli -->
+<label for="mesaj2">Gizli Mesaj Alanı:</label>
+<textarea id="mesaj2" aria-hidden="true">Gizli metin</textarea>
+
 
 </body>
 </html>
