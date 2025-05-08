@@ -16,6 +16,27 @@
   <!-- Resimler burada JavaScript ile eklenecek -->
 </div>
 
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+
+    const a = document.createElement('a');
+    a.href = "https://example.com";
+    a.title = "Açıklama metni";
+
+    const img = document.createElement('img');
+    img.setAttribute('data-src', 'https://via.placeholder.com/150');
+    img.setAttribute('alt', 'Açıklama metni');
+    img.setAttribute('title', 'Açıklama metni');
+    img.width = 150;
+    img.height = 150;
+
+    a.appendChild(img);
+    container.appendChild(a);
+  });
+</script>
+
 <script>
   // Lazy loading için basit bir JavaScript kodu
   document.addEventListener("DOMContentLoaded", function() {
