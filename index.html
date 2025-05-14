@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Erişilebilirlik Test Sayfası</title>
+  <title>Accessibility Test Page</title>
   <style>
     .hidden-display {
       display: none;
@@ -17,156 +17,158 @@
   </style>
 </head>
 <body>
-  <h1>Web Erişilebilirlik Test Sayfası</h1>
+  <h1>Web Accessibility Test Page</h1>
 
-     <!-- Seçenek 2: Görsel görünmezse, alternatif erişilebilir metin kullanılmalı -->
-  <a href="https://example.com" >
-  <img src="https://placekitten.com/112/112" alt="Anasayfaya git" class="hidden-visibility">
-</a>
+  <!-- Option 2: Image is hidden using visibility:hidden; alt text should still be meaningful -->
+  <a href="https://example.com">
+    <img src="https://placekitten.com/112/112" alt="Go to homepage" class="hidden-visibility">
+  </a>
 
-   <!--  Seçenek 1: Görsel görünür olmalı -->
-<a href="https://example.com">
-  <img src="https://placekitten.com/112/112" alt="Anasayfaya git">
-</a>
+  <!-- Option 1: Visible image with accessible alt text -->
+  <a href="https://example.com">
+    <img src="https://placekitten.com/112/112" alt="Go to homepage">
+  </a>
 
-  
   <div>
-    <!-- Bu bağlantı içinde <img> var ama sadece data-src kullanılmış -->
+    <!-- Image inside link uses only data-src, not src (may cause screen readers to miss it) -->
     <a href="https://example.com/news" title="Click to read">
       <img data-src="https://via.placeholder.com/150" alt="News image" title="Click to read">
     </a>
   </div>
 
   <div>
-    <!-- Redundant Link: Aynı URL iki farklı bağlantı içinde -->
-    <a href="/haber/123" title="Haber başlığı">
-      <img src="https://via.placeholder.com/150" alt="Haber başlığı" title="Haber başlığı">
+    <!-- Redundant Links: Two separate links to the same URL -->
+    <a href="/haber/123" title="News headline">
+      <img src="https://via.placeholder.com/150" alt="News headline" title="News headline">
     </a>
-    <a href="/haber/123" title="Haber başlığı">
-      <span>Haber başlığı</span>
-    </a>
-  </div>
-
-      <div>
-    <!-- Bu bağlantı içinde sadece bir <img> var ve alt metni boş -->
-    <a href="https://example.com" title="Görsele git">
-      <img src="https://via.placeholder.com/150" alt="" title="Görsele git">
+    <a href="/haber/123" title="News headline">
+      <span>News headline</span>
     </a>
   </div>
 
-  
-    <!-- Bu bağlantı içindeki resimde alt metin var gibi görünse de src yerine data-src kullanılıyor -->
-  <a href="https://example.com" title="Örnek görsel">
-    <img data-src="https://via.placeholder.com/150" alt="Örnek görsel" title="Örnek görsel" />
+  <div>
+    <!-- Image with empty alt text inside link (not accessible) -->
+    <a href="https://example.com" title="Go to image">
+      <img src="https://via.placeholder.com/150" alt="" title="Go to image">
+    </a>
+  </div>
+
+  <!-- Another case with data-src instead of src -->
+  <a href="https://example.com" title="Example image">
+    <img data-src="https://via.placeholder.com/150" alt="Example image" title="Example image" />
   </a>
 
-  <!-- Görseller -->
+  <!-- Various image examples with/without alt text and visibility -->
   <a href="https://example.com">
     <img src="https://placekitten.com/100/100" />
   </a>
   <a href="https://example.com">
-  <img src="https://placekitten.com/112/112" alt="Anasayfaya git" class="hidden-visibility">
-</a>
-
-  <a href="https://example.com">
-    <img src="https://placekitten.com/101/101" alt="Gizli Görsel" class="hidden-display" />
+    <img src="https://placekitten.com/112/112" alt="Go to homepage" class="hidden-visibility">
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/102/102" alt="İstanbul’un logosu – Görsel bağlantı" />
+    <img src="https://placekitten.com/101/101" alt="Hidden Image" class="hidden-display" />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/103/103" alt="Görünmez görsel" class="hidden-visibility" />
+    <img src="https://placekitten.com/102/102" alt="Istanbul logo – Image link" />
+  </a>
+  <a href="https://example.com">
+    <img src="https://placekitten.com/103/103" alt="Invisible image" class="hidden-visibility" />
   </a>
   <a href="https://example.com">
     <img src="https://placekitten.com/104/104" alt="Invisible image" class="hidden-visibility" />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/111/111" alt="アクセシビリティテスト用画像" class="hidden-visibility" />
+    <img src="https://placekitten.com/111/111" alt="Image for accessibility test" class="hidden-visibility" />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/105/105" alt="Image cachée" class="hidden-visibility" />
+    <img src="https://placekitten.com/105/105" alt="Hidden image (French)" class="hidden-visibility" />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/106/106" alt="Imagen de prueba para accesibilidad" class="hidden-visibility" />
+    <img src="https://placekitten.com/106/106" alt="Accessibility test image (Spanish)" class="hidden-visibility" />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/112/112" alt="Verstecktes Bild" class="hidden-visibility" />
+    <img src="https://placekitten.com/112/112" alt="Hidden image (German)" class="hidden-visibility" />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/105/105" alt="Image cachée" class="hidden-display" />
+    <img src="https://placekitten.com/105/105" alt="Hidden image (French)" class="hidden-display" />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/106/106" alt="Imagen de prueba para accesibilidad" />
+    <img src="https://placekitten.com/106/106" alt="Accessibility test image (Spanish)" />
   </a>
+
+  <!-- Decorative image with empty alt and role="presentation" -->
   <img src="https://placekitten.com/107/107" alt="" role="presentation" class="decorative" />
-  <img src="https://placekitten.com/108/108" alt="Bu sadece bilgi veren bir görsel" />
+
+  <!-- Informative image with proper alt -->
+  <img src="https://placekitten.com/108/108" alt="Informative image only" />
+
   <a href="https://example.com">
-    <img src="https://placekitten.com/109/109" alt="Çalışmalarımız hakkında bilgi almak için tıklayın." />
+    <img src="https://placekitten.com/109/109" alt="Click to learn more about our work." />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/110/110" alt="Gizli erişim" aria-hidden="true" />
+    <img src="https://placekitten.com/110/110" alt="Hidden access" aria-hidden="true" />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/111/111" alt="アクセシビリティテスト用画像" />
+    <img src="https://placekitten.com/111/111" alt="Image for accessibility test" />
   </a>
   <a href="https://example.com">
-    <img src="https://placekitten.com/112/112" alt="Verstecktes Bild" class="hidden-display" />
+    <img src="https://placekitten.com/112/112" alt="Hidden image (German)" class="hidden-display" />
   </a>
 
-  <!-- Butonlar -->
-  <button style="display:none;">Tıklanamaz</button>
-  <button style="visibility:hidden;">Görünmeyen buton</button>
-  <button aria-hidden="true">Ekran okuyucuya kapalı</button>
-  <button style="display:none;">İçeriği Göster</button>
+  <!-- Buttons -->
+  <button style="display:none;">Unclickable</button>
+  <button style="visibility:hidden;">Invisible button</button>
+  <button aria-hidden="true">Hidden from screen reader</button>
+  <button style="display:none;">Show Content</button>
 
-  <!-- Ek Öğeler -->
-  <!-- Başlıklar -->
-  <h2 class="hidden-display">Gizli Başlık (display:none)</h2>
-  <h2 class="hidden-visibility">Gizli Başlık (visibility:hidden)</h2>
-  <h2 aria-hidden="true">Gizli Başlık (aria-hidden)</h2>
+  <!-- Additional Elements -->
 
-  <!-- Paragraflar -->
-  <p class="hidden-display">Gizli Paragraf (display:none)</p>
-  <p class="hidden-visibility">Gizli Paragraf (visibility:hidden)</p>
-  <p aria-hidden="true">Gizli Paragraf (aria-hidden)</p>
+  <!-- Headings -->
+  <h2 class="hidden-display">Hidden Heading (display:none)</h2>
+  <h2 class="hidden-visibility">Hidden Heading (visibility:hidden)</h2>
+  <h2 aria-hidden="true">Hidden Heading (aria-hidden)</h2>
 
-  <!-- Bağlantılar -->
-  <a href="#" class="hidden-display">Gizli Link (display:none)</a>
-  <a href="#" class="hidden-visibility">Gizli Link (visibility:hidden)</a>
-  <a href="#" aria-hidden="true">Gizli Link (aria-hidden)</a>
+  <!-- Paragraphs -->
+  <p class="hidden-display">Hidden Paragraph (display:none)</p>
+  <p class="hidden-visibility">Hidden Paragraph (visibility:hidden)</p>
+  <p aria-hidden="true">Hidden Paragraph (aria-hidden)</p>
 
-  <!-- Form elemanları -->
-<h2>Form Alanları Erişilebilirlik Testi</h2>
+  <!-- Links -->
+  <a href="#" class="hidden-display">Hidden Link (display:none)</a>
+  <a href="#" class="hidden-visibility">Hidden Link (visibility:hidden)</a>
+  <a href="#" aria-hidden="true">Hidden Link (aria-hidden)</a>
 
-<!-- 1. Görünür input ve doğru label -->
-<label for="ad1">Adınız (doğru örnek):</label>
-<input type="text" id="ad1" placeholder="Adınızı yazın" />
+  <!-- Form Elements -->
+  <h2>Form Field Accessibility Test</h2>
 
-<!-- 2. Görünür input ve eksik label -->
-<input type="text" id="ad2" placeholder="Eksik etiketli input" />
+  <!-- 1. Visible input with proper label -->
+  <label for="ad1">Your Name (correct example):</label>
+  <input type="text" id="ad1" placeholder="Enter your name" />
 
-<!-- 3. Gizli input (display:none) ve label var -->
-<label for="ad3">Gizli Ad (label var, ama input gizli):</label>
-<input type="text" id="ad3" style="display:none;" placeholder="Gizli input" />
+  <!-- 2. Visible input with missing label -->
+  <input type="text" id="ad2" placeholder="Input without label" />
 
-<!-- 4. Gizli input (visibility:hidden) ve label yok -->
-<input type="text" id="ad4" style="visibility:hidden;" placeholder="Etiketsiz ve gizli input" />
+  <!-- 3. Hidden input (display:none) with label -->
+  <label for="ad3">Hidden Name (label exists, input is hidden):</label>
+  <input type="text" id="ad3" style="display:none;" placeholder="Hidden input" />
 
-<!-- 5. Görünür input, aria-hidden="true", label var -->
-<label for="ad5">Adınız (aria-hidden):</label>
-<input type="text" id="ad5" aria-hidden="true" placeholder="Ekran okuyucuya kapalı" />
+  <!-- 4. Hidden input (visibility:hidden) with no label -->
+  <input type="text" id="ad4" style="visibility:hidden;" placeholder="No label, hidden input" />
 
-<!-- 6. Textarea – etiketsiz -->
-<textarea placeholder="Etiketsiz textarea"></textarea>
+  <!-- 5. Visible input, aria-hidden="true", has label -->
+  <label for="ad5">Your Name (aria-hidden):</label>
+  <input type="text" id="ad5" aria-hidden="true" placeholder="Hidden from screen reader" />
 
-<!-- 7. Textarea – etiketli -->
-<label for="mesaj1">Mesajınız:</label>
-<textarea id="mesaj1" placeholder="Bir mesaj yazın..."></textarea>
+  <!-- 6. Textarea without label -->
+  <textarea placeholder="Textarea without label"></textarea>
 
-<!-- 8. Textarea – gizli (aria-hidden), etiketli -->
-<label for="mesaj2">Gizli Mesaj Alanı:</label>
-<textarea id="mesaj2" aria-hidden="true">Gizli metin</textarea>
+  <!-- 7. Textarea with label -->
+  <label for="mesaj1">Your Message:</label>
+  <textarea id="mesaj1" placeholder="Write a message..."></textarea>
 
+  <!-- 8. Hidden (aria-hidden) textarea with label -->
+  <label for="mesaj2">Hidden Message Field:</label>
+  <textarea id="mesaj2" aria-hidden="true">Hidden text</textarea>
 
 </body>
 </html>
