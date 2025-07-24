@@ -1,148 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Yanlış dil tanımı -->
 <head>
   <meta charset="UTF-8">
-  <title>Accessibility Test Page - Multilang</title>
-  <style>
-    .hidden-display { display: none; }
-    .hidden-visibility { visibility: hidden; }
-    .decorative { width: 50px; height: 50px; }
-  </style>
+  <title>Erişilebilirlik Testi – Türkçe Sayfa</title>
 </head>
 <body>
-  <h1>Web Accessibility Test Page</h1>
+  <h1>Web Sitesi Başlığı</h1>
 
-  <!-- Invisible image with accessible alt text -->
-  <a href="https://example.com">
-    <img src="https://placekitten.com/112/112" alt="Anasayfaya git / Go to homepage" class="hidden-visibility">
-  </a>
- 
-  <!-- Visible image with descriptive alt text -->
-  <a href="https://example.com">
-    <img src="https://placekitten.com/112/112" alt="Anasayfaya git / Go to homepage">
-  </a>
+  <!-- Dil tanımı İngilizce olmasına rağmen içerik Türkçe -->
+  <p>Bu sayfa, erişilebilirlik testleri için Türkçe karakterler içermektedir: ç, ğ, ş, ü, ö, ı, İ.</p>
 
-  <!-- Image using only data-src (problematic for accessibility) -->
-  <a href="https://example.com/news" title="Click to read">
-    <img data-src="https://via.placeholder.com/150" alt="Haber görseli / News image" title="Click to read">
-  </a>
+  <!-- Alt metni Türkçe karakter içeriyor -->
+  <img src="https://placekitten.com/200/200" alt="İstanbul Şehir Logosu">
 
-  <!-- Repeated content leading to the same link -->
-  <a href="/news/123" title="News headline">
-    <img src="https://via.placeholder.com/150" alt="Haber başlığı / News headline">
-  </a>
-  <a href="/news/123" title="News headline">
-    <span>Haber başlığı / News headline</span>
+  <!-- Anlamsız bağlantı -->
+  <a href="/iletisim">Buraya tıklayın</a>
+
+  <!-- Bağlantı içinde Türkçe karakterli alt metin -->
+  <a href="/hakkimizda">
+    <img src="https://placekitten.com/150/150" alt="Hakkımızda Sayfasına Git">
   </a>
 
-  <!-- Image link without alt text -->
-  <a href="https://example.com" title="Go to image">
-    <img src="https://via.placeholder.com/150" alt="">
-  </a>
+  <!-- Form alanı eksik etiketli -->
+  <input type="text" placeholder="Adınızı yazınız">
 
-  <!-- Second image defined using data-src -->
-  <a href="https://example.com" title="Example image">
-    <img data-src="https://via.placeholder.com/150" alt="Örnek görsel / Example image">
-  </a>
+  <!-- Yanlış kullanılmış label -->
+  <label>Yorumunuzu giriniz:</label>
+  <textarea></textarea>
 
-  <!-- Multilingual examples -->
-  <a href="https://example.com">
-    <img src="https://placekitten.com/101/101" alt="Gizli Görsel / Hidden Image" class="hidden-display">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/102/102" alt="İstanbul’un logosu – Görsel bağlantı / Istanbul logo – Image link">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/103/103" alt="Görünmez görsel / Invisible image" class="hidden-visibility">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/104/104" alt="Invisible image" class="hidden-visibility">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/111/111" alt="アクセシビリティテスト用画像 / Image for accessibility test (JP)" class="hidden-visibility">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/105/105" alt="Image cachée / Hidden image (FR)" class="hidden-visibility">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/106/106" alt="Imagen de prueba para accesibilidad / Accessibility test image (ES)" class="hidden-visibility">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/112/112" alt="Verstecktes Bild / Hidden image (DE)" class="hidden-visibility">
-  </a>
+  <!-- aria-label içinde Türkçe karakter -->
+  <button aria-label="Görüşlerinizi gönderin">Gönder</button>
 
-  <!-- Decorative image -->
-  <img src="https://placekitten.com/107/107" alt="" role="presentation" class="decorative">
-
-  <!-- Informative image -->
-  <img src="https://placekitten.com/108/108" alt="Bu sadece bilgi veren bir görsel / Informative image only">
-
-  <!-- Image links conveying meaningful content -->
-  <a href="https://example.com">
-    <img src="https://placekitten.com/109/109" alt="Çalışmalarımız hakkında bilgi almak için tıklayın / Click to learn more about our work.">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/110/110" alt="Gizli erişim / Hidden access" aria-hidden="true">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/111/111" alt="アクセシビリティテスト用画像 / Image for accessibility test (JP)">
-  </a>
-  <a href="https://example.com">
-    <img src="https://placekitten.com/112/112" alt="Verstecktes Bild / Hidden image (DE)" class="hidden-display">
-  </a>
-
-  <!-- Buttons -->
-  <button style="display:none;">Tıklanamaz </button>
-  <button style="visibility:hidden;">Görünmeyen buton </button>
-  <button aria-hidden="true">Ekran okuyucuya kapalı </button>
-  <button style="display:none;">İçeriği Göster / Show Content</button>
-
-  <!-- Headings -->
-  <h2 class="hidden-display">Gizli Başlık (display:none) / Hidden Heading</h2>
-  <h2 class="hidden-visibility">Gizli Başlık (visibility:hidden) / Hidden Heading</h2>
-  <h2 aria-hidden="true">Gizli Başlık (aria-hidden) / Hidden Heading</h2>
-
-  <!-- Paragraphs -->
-  <p class="hidden-display">Gizli Paragraf (display:none) / Hidden Paragraph</p>
-  <p class="hidden-visibility">Gizli Paragraf (visibility:hidden) / Hidden Paragraph</p>
-  <p aria-hidden="true">Gizli Paragraf (aria-hidden) / Hidden Paragraph</p>
-
-  <!-- Links -->
-  <a href="#" class="hidden-display">Gizli Link (display:none) / Hidden Link</a>
-  <a href="#" class="hidden-visibility">Gizli Link (visibility:hidden) / Hidden Link</a>
-  <a href="#" aria-hidden="true">Gizli Link (aria-hidden) / Hidden Link</a>
-
-  <!-- Form elements -->
-  <h2>Form Field Accessibility Test</h2>
-
-  <!-- Properly labeled field -->
-  <label for="ad1">Adınız (doğru örnek) / Your Name (correct example):</label>
-  <input type="text" id="ad1" placeholder="Adınızı yazın / Enter your name">
-
-  <!-- Unlabeled field -->
-  <input type="text" id="ad2" placeholder="Eksik etiketli input / Input without label">
-
-  <!-- Hidden input with label -->
-  <label for="ad3">Gizli Ad (label var, input gizli) / Hidden Name (label exists, input is hidden):</label>
-  <input type="text" id="ad3" style="display:none;" placeholder="Gizli input / Hidden input">
-
-  <!-- Hidden input (visibility:hidden) -->
-  <input type="text" id="ad4" style="visibility:hidden;" placeholder="Etiketsiz ve gizli input / No label, hidden input">
-
-  <!-- Input hidden from screen readers -->
-  <label for="ad5">Adınız (aria-hidden) / Your Name (aria-hidden):</label>
-  <input type="text" id="ad5" aria-hidden="true" placeholder="Ekran okuyucuya kapalı / Hidden from screen reader">
-
-  <!-- Textarea without label -->
-  <textarea placeholder="Etiketsiz textarea / Textarea without label"></textarea>
-
-  <!-- Textarea with label -->
-  <label for="mesaj1">Mesajınız / Your Message:</label>
-  <textarea id="mesaj1" placeholder="Bir mesaj yazın... / Write a message..."></textarea>
-
-  <!-- Textarea hidden from screen readers -->
-  <label for="mesaj2">Gizli Mesaj Alanı / Hidden Message Field:</label>
-  <textarea id="mesaj2" aria-hidden="true">Gizli metin / Hidden text</textarea>
+  <!-- UTF-8 kodlaması doğru ama otomatik test aracı desteklemeyebilir -->
+  <img src="https://placekitten.com/120/120" alt="Şirket Görseli">
 
 </body>
 </html>
